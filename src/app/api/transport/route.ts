@@ -39,9 +39,10 @@ export async function GET(request: Request) {
       `https://v6.db.transport.rest/journeys?from=${from}&to=${to}&results=15&stopovers=false`,
       {
         headers: {
-          "User-Agent": "HaanPendlerHub/1.0 (privates Dashboard)",
+          "User-Agent": "HaanPendlerHub/1.1 (mailto:pendler-dashboard@googlemail.com)",
           "Accept": "application/json",
         },
+        next: { revalidate: 30 }
       }
     );
 
