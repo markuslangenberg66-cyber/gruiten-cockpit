@@ -19,8 +19,16 @@ export default function Dashboard() {
   const [trainWarn, setTrainWarn] = useState(false);
 
   useEffect(() => {
-    const hour = new Date().getHours();
-    setIsMorning(hour < 14);
+    const checkTime = () => {
+      const hour = new Date().getHours();
+      // Vor 14 Uhr = Hinfahrt (Haan -> Düsseldorf)
+      // Ab 14 Uhr = Rückfahrt (Düsseldorf -> Haan)
+      setIsMorning(hour < 14);
+    };
+    checkTime();
+    // Prüfe jede Minute, ob sich die Tageszeit geändert hat
+    const interval = setInterval(checkTime, 60000);
+    return () => clearInterval(interval);
   }, []);
 
   // Push-Benachrichtigungen
