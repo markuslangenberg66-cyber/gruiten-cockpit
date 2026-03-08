@@ -74,6 +74,14 @@ export async function GET(request: Request) {
         displayName = displayName.includes("Bus") ? displayName : `${displayName} (Ersatz-Bus)`;
       }
 
+      const simplifiedLegs = journey.legs.map((leg: any) => ({
+        name: leg.line?.name || (leg.walking ? "Fußweg" : "Umstieg"),
+        origin: leg.origin?.name || "Start",
+        destination: leg.destination?.name || "Ziel",
+        plannedDeparture: leg.plannedDeparture,
+        plannedArrival: leg.plannedArrival
+      }));
+
       return {
         plannedDeparture:  firstLeg.plannedDeparture,
         departure:         firstLeg.departure,
@@ -85,6 +93,7 @@ export async function GET(request: Request) {
         direction:         sbLeg?.direction || "Düsseldorf Hbf",
         origin:            firstLeg.origin,
         destination:       lastLeg.destination,
+        legs:              simplifiedLegs,
       };
     });
 

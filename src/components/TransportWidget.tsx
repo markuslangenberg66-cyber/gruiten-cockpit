@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
-import { Train, AlertCircle, Clock } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { Train, AlertCircle, Clock, ChevronDown, MapPin, Footprints } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 import clsx from 'clsx';
 import { format } from 'date-fns';
 
@@ -9,6 +9,7 @@ export default function TransportWidget({ isMorning, onWarning }: { isMorning: b
   const [journeys, setJourneys] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
   useEffect(() => {
     const fetchTransport = async () => {
@@ -93,35 +94,82 @@ export default function TransportWidget({ isMorning, onWarning }: { isMorning: b
             <div
               key={i}
               className={clsx(
-                "flex justify-between items-center pb-3 border-b border-white/10 last:border-0 last:pb-0",
+                "pb-3 border-b border-white/10 last:border-0 last:pb-0",
                 cancelled && "opacity-40"
               )}
             >
-              <div className="flex flex-col gap-1">
-                <div className="flex items-center gap-2">
-                  <span className="font-bold text-xl tabular-nums">{format(plannedDep, "HH:mm")}</span>
-                  {delayMin > 0 && !cancelled && (
-                    <span className="text-xs text-red-400 font-bold bg-red-500/10 px-1.5 py-0.5 rounded border border-red-500/20">
-                      +{delayMin} Min
-                    </span>
-                  )}
-                  {cancelled && (
-                    <span className="text-xs text-red-500 font-bold bg-red-500/10 px-1.5 py-0.5 rounded border border-red-500/20 flex items-center gap-1">
-                      <AlertCircle className="w-3 h-3" /> Ausfall
-                    </span>
-                  )}
+              <div 
+                className="flex justify-between items-center cursor-pointer hover:bg-white/5 p-2 -mx-2 rounded transition-colors group"
+                onClick={() => setExpandedIndex(expandedIndex === i ? null : i)}
+              >
+                <div className="flex flex-col gap-1">
+                  <div className="flex items-center gap-2">
+                    <span className="font-bold text-xl tabular-nums">{format(plannedDep, "HH:mm")}</span>
+                    {delayMin > 0 && !cancelled && (
+                      <span className="text-xs text-red-400 font-bold bg-red-500/10 px-1.5 py-0.5 rounded border border-red-500/20">
+                        +{delayMin} Min
+                      </span>
+                    )}
+                    {cancelled && (
+                      <span className="text-xs text-red-500 font-bold bg-red-500/10 px-1.5 py-0.5 rounded border border-red-500/20 flex items-center gap-1">
+                        <AlertCircle className="w-3 h-3" /> Ausfall
+                      </span>
+                    )}
+                  </div>
+                  <span className="text-xs opacity-60 font-semibold tracking-wide flex items-center gap-1">
+                    {journey.line?.name || "S-Bahn"} 
+                    <ChevronDown className={clsx("w-3 h-3 transition-transform", expandedIndex === i && "rotate-180")} />
+                  </span>
                 </div>
-                <span className="text-xs opacity-60 font-semibold tracking-wide">
-                  {journey.line?.name || "S-Bahn"}
-                </span>
+
+                <div className="text-right flex flex-col items-end gap-1">
+                  <span className="font-bold text-xl tabular-nums opacity-80">{format(plannedArr, "HH:mm")}</span>
+                  <span className="text-xs opacity-50 flex items-center gap-1">
+                    <Clock className="w-3 h-3" /> {durationMin} min
+                  </span>
+                </div>
               </div>
 
-              <div className="text-right flex flex-col items-end gap-1">
-                <span className="font-bold text-xl tabular-nums opacity-80">{format(plannedArr, "HH:mm")}</span>
-                <span className="text-xs opacity-50 flex items-center gap-1">
-                  <Clock className="w-3 h-3" /> {durationMin} min
-                </span>
-              </div>
+              <AnimatePresence>
+                {expandedIndex === i && journey.legs && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    className="overflow-hidden"
+                  >
+                    <div className="mt-2 pl-3 ml-2 border-l-2 border-white/10 space-y-3 py-2 text-xs">
+                      {journey.legs.map((leg: any, idx: number) => {
+                        const isWalk = leg.name === "Fußweg";
+                        return (
+                          <div key={idx} className="relative">
+                            <div className="absolute -left-[17px] top-1 w-2 h-2 rounded-full bg-slate-500 ring-4 ring-[#0b0f19]"></div>
+                            <div className="flex justify-between items-start mb-0.5">
+                              <span className={clsx("font-semibold flex items-center gap-1", isWalk ? "text-emerald-400/80" : "text-emerald-400")}>
+                                {isWalk ? <Footprints className="w-3 h-3" /> : <Train className="w-3 h-3" />}
+                                {leg.name}
+                              </span>
+                              <span className="tabular-nums font-mono opacity-60">
+                                {leg.plannedDeparture ? format(new Date(leg.plannedDeparture), "HH:mm") : ""}
+                                {leg.plannedDeparture && leg.plannedArrival ? " - " : ""}
+                                {leg.plannedArrival ? format(new Date(leg.plannedArrival), "HH:mm") : ""}
+                              </span>
+                            </div>
+                            <div className="flex flex-col opacity-60">
+                              <span className="truncate flex items-center gap-1">
+                                <div className="w-1 h-1 rounded-full bg-white/30 mr-1" /> {leg.origin}
+                              </span>
+                              <span className="truncate flex items-center gap-1 ml-2">
+                                <MapPin className="w-3 h-3 text-emerald-400/50" /> {leg.destination}
+                              </span>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           );
         })}
