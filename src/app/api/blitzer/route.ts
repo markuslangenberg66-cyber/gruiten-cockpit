@@ -41,9 +41,10 @@ export async function GET(request: Request) {
     // Box Format: lat_min, lng_min, lat_max, lng_max
     const blitzerUrl = "https://cdn2.atudo.net/api/1.0/vl.php?type=1,5&box=51.15,6.7,51.3,7.1";
 
+    const fetchOpts = { next: { revalidate: 60 } }; // 60 Sekunden Cache für TomTom
     const [mainRes, altRes, blitzerRes] = await Promise.all([
-      fetch(mainUrl),
-      fetch(altUrl),
+      fetch(mainUrl, fetchOpts),
+      fetch(altUrl, fetchOpts),
       fetch(blitzerUrl, { headers: { "User-Agent": "Mozilla/5.0" }, next: { revalidate: 60 } }),
     ]);
 

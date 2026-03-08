@@ -26,9 +26,10 @@ export async function GET(request: Request) {
   const altUrl  = `${base}/${from}:${to}/json?${common}&avoid=motorways`;
 
   try {
+    const fetchOpts = { next: { revalidate: 60 } }; // 60 Sekunden Cache für TomTom
     const [mainRes, altRes] = await Promise.all([
-      fetch(mainUrl),
-      fetch(altUrl),
+      fetch(mainUrl, fetchOpts),
+      fetch(altUrl, fetchOpts),
     ]);
 
     const mainData = mainRes.ok ? await mainRes.json() : null;

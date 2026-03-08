@@ -28,11 +28,17 @@ export default function BlitzerWidget({ isMorning }: { isMorning: boolean }) {
         setLoading(false);
       }
     };
+    // Kurze Start-Verzögerung (1.5s), damit TomTom API nicht durch TrafficWidget 
+    // & BlitzerWidget exakt parallel aufgerufen wird (Rate-Limit Schutz).
+    const timer = setTimeout(() => {
+      fetchBlitzers();
+    }, 1500);
 
-    fetchBlitzers();
-    // Update every 5 minutes
     const interval = setInterval(fetchBlitzers, 5 * 60000);
-    return () => clearInterval(interval);
+    return () => {
+      clearTimeout(timer);
+      clearInterval(interval);
+    };
   }, [isMorning]);
 
   if (loading) return <div className="glass-panel p-6 animate-pulse bg-white/5 h-40 rounded-xl"></div>;
