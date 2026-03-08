@@ -1,12 +1,13 @@
 "use client";
 import React, { useState, useEffect } from 'react';
-import { Car, AlertTriangle, Map, Clock } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { Car, AlertTriangle, Map, Clock, ChevronDown, ExternalLink } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 import clsx from 'clsx';
 
 export default function TrafficWidget({ isMorning, onWarning }: { isMorning: boolean, onWarning: (warn: boolean) => void }) {
   const [data, setData] = useState<any>(null);
   const [loading, setLoading] = useState(true);
+  const [expanded, setExpanded] = useState(false);
 
   useEffect(() => {
     const fetchTraffic = async () => {
@@ -45,71 +46,105 @@ export default function TrafficWidget({ isMorning, onWarning }: { isMorning: boo
         hasHeavyDelay ? "border-red-500/50 bg-red-950/20" : "border-white/10"
       )}
     >
-      {/* Header */}
-      <div className="flex justify-between items-center mb-4">
-        <h2 className="text-xs font-bold opacity-80 uppercase tracking-widest font-mono flex items-center gap-2">
-          <Car className="w-4 h-4" />
-          Autofahrt via A46 {isMorning ? '→ Düsseldorf' : '→ Haan'}
-        </h2>
-        {hasLightDelay && (
-          <div className={clsx(
-            "flex items-center gap-1 text-xs px-2 py-1 rounded font-bold border",
-            hasHeavyDelay
-              ? "bg-red-500/20 text-red-400 border-red-500/30"
-              : "bg-orange-500/20 text-orange-400 border-orange-500/30"
-          )}>
-            <AlertTriangle className="w-3 h-3" /> +{a46.delayMin} Min Stau
+      <div 
+        className="cursor-pointer group flex flex-col h-full"
+        onClick={() => setExpanded(!expanded)}
+      >
+        {/* Header */}
+        <div className="flex justify-between items-center mb-4">
+          <h2 className="text-xs font-bold opacity-80 uppercase tracking-widest font-mono flex items-center gap-2 group-hover:text-emerald-400 transition-colors">
+            <Car className="w-4 h-4" />
+            Autofahrt via A46 {isMorning ? '→ Düsseldorf' : '→ Haan'}
+            <ChevronDown className={clsx("w-3 h-3 transition-transform ml-1", expanded && "rotate-180")} />
+          </h2>
+          {hasLightDelay && (
+            <div className={clsx(
+              "flex items-center gap-1 text-xs px-2 py-1 rounded font-bold border",
+              hasHeavyDelay
+                ? "bg-red-500/20 text-red-400 border-red-500/30"
+                : "bg-orange-500/20 text-orange-400 border-orange-500/30"
+            )}>
+              <AlertTriangle className="w-3 h-3" /> +{a46.delayMin} Min Stau
+            </div>
+          )}
+        </div>
+
+        {/* Hauptzeit */}
+        <div className="flex items-end gap-3 mb-1">
+          <span className="text-5xl font-extralight tabular-nums">{a46.travelTimeMin}</span>
+          <span className="text-lg opacity-60 mb-1">min</span>
+        </div>
+        <p className="text-xs opacity-40 mb-1">
+          Regulär: {a46.baseTimeMin} min · {a46.lengthKm} km · A46
+        </p>
+        <p className="text-xs opacity-30">
+          {isMorning ? 'Bahnstr. 56, Haan → Kavalleriestr. 22, Düsseldorf' : 'Kavalleriestr. 22, Düsseldorf → Bahnstr. 56, Haan'}
+        </p>
+
+        {/* Ausweichroute – nur bei starkem Stau (≥ 20 Min) */}
+        {hasHeavyDelay && alternative && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            className="mt-5 p-4 rounded-xl bg-amber-950/40 border border-amber-500/30"
+          >
+            <div className="flex items-center gap-2 text-amber-400 mb-2 font-bold text-xs uppercase tracking-wider">
+              <Map className="w-3.5 h-3.5" /> Ausweichroute empfohlen
+            </div>
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-sm text-amber-200 font-semibold">{alternative.via}</p>
+                <p className="text-xs opacity-60 mt-0.5">{alternative.lengthKm} km ohne Autobahn</p>
+              </div>
+              <div className="text-right">
+                <span className="text-2xl font-light text-amber-300 tabular-nums">{alternative.travelTimeMin}</span>
+                <span className="text-sm text-amber-300 opacity-70"> min</span>
+                {alternative.travelTimeMin < a46.travelTimeMin && (
+                  <p className="text-xs text-emerald-400 font-bold mt-0.5">
+                    -{a46.travelTimeMin - alternative.travelTimeMin} Min schneller
+                  </p>
+                )}
+              </div>
+            </div>
+          </motion.div>
+        )}
+
+        {/* Leichte Verzögerung – kleiner Hinweis */}
+        {hasLightDelay && !hasHeavyDelay && (
+          <div className="mt-4 pt-3 border-t border-white/10 flex items-center gap-2 text-xs text-orange-400/80">
+            <Clock className="w-3 h-3" />
+            Leichte Verzögerung auf der A46 – Ausweichroute wird ab +20 Min angezeigt.
           </div>
         )}
       </div>
 
-      {/* Hauptzeit */}
-      <div className="flex items-end gap-3 mb-1">
-        <span className="text-5xl font-extralight tabular-nums">{a46.travelTimeMin}</span>
-        <span className="text-lg opacity-60 mb-1">min</span>
-      </div>
-      <p className="text-xs opacity-40 mb-1">
-        Regulär: {a46.baseTimeMin} min · {a46.lengthKm} km · A46
-      </p>
-      <p className="text-xs opacity-30">
-        {isMorning ? 'Bahnstr. 56, Haan → Kavalleriestr. 22, Düsseldorf' : 'Kavalleriestr. 22, Düsseldorf → Bahnstr. 56, Haan'}
-      </p>
-
-      {/* Ausweichroute – nur bei starkem Stau (≥ 20 Min) */}
-      {hasHeavyDelay && alternative && (
-        <motion.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: 'auto' }}
-          className="mt-5 p-4 rounded-xl bg-amber-950/40 border border-amber-500/30"
-        >
-          <div className="flex items-center gap-2 text-amber-400 mb-2 font-bold text-xs uppercase tracking-wider">
-            <Map className="w-3.5 h-3.5" /> Ausweichroute empfohlen
-          </div>
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="text-sm text-amber-200 font-semibold">{alternative.via}</p>
-              <p className="text-xs opacity-60 mt-0.5">{alternative.lengthKm} km ohne Autobahn</p>
-            </div>
-            <div className="text-right">
-              <span className="text-2xl font-light text-amber-300 tabular-nums">{alternative.travelTimeMin}</span>
-              <span className="text-sm text-amber-300 opacity-70"> min</span>
-              {alternative.travelTimeMin < a46.travelTimeMin && (
-                <p className="text-xs text-emerald-400 font-bold mt-0.5">
-                  -{a46.travelTimeMin - alternative.travelTimeMin} Min schneller
-                </p>
-              )}
-            </div>
-          </div>
-        </motion.div>
-      )}
-
-      {/* Leichte Verzögerung – kleiner Hinweis */}
-      {hasLightDelay && !hasHeavyDelay && (
-        <div className="mt-4 pt-3 border-t border-white/10 flex items-center gap-2 text-xs text-orange-400/80">
-          <Clock className="w-3 h-3" />
-          Leichte Verzögerung auf der A46 – Ausweichroute wird ab +20 Min angezeigt.
-        </div>
-      )}
+      <AnimatePresence>
+        {expanded && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            className="overflow-hidden mt-4 pt-4 border-t border-white/10"
+          >
+            <iframe 
+              width="100%" 
+              height="240" 
+              style={{ border: 0, borderRadius: '12px', opacity: 0.8 }} 
+              src={`https://maps.google.com/maps?saddr=${encodeURIComponent(isMorning ? 'Bahnstr. 56, 42781 Haan' : 'Kavalleriestraße 22, 40213 Düsseldorf')}&daddr=${encodeURIComponent(isMorning ? 'Kavalleriestraße 22, 40213 Düsseldorf' : 'Bahnstr. 56, 42781 Haan')}&output=embed`}
+              allowFullScreen
+            />
+            <a 
+              href={`https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(isMorning ? 'Bahnstr. 56, 42781 Haan' : 'Kavalleriestraße 22, 40213 Düsseldorf')}&destination=${encodeURIComponent(isMorning ? 'Kavalleriestraße 22, 40213 Düsseldorf' : 'Bahnstr. 56, 42781 Haan')}&travelmode=driving`} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="mt-3 flex items-center justify-center gap-2 p-3 bg-emerald-500/20 text-emerald-400 rounded-xl text-sm font-bold shadow-lg shadow-emerald-500/10 hover:bg-emerald-500/30 transition-colors"
+            >
+              <ExternalLink className="w-4 h-4" />
+              Live-Route in Navi App starten
+            </a>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.div>
   );
 }
