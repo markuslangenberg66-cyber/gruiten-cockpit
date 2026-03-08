@@ -64,8 +64,15 @@ export async function GET(request: Request) {
         ALLOWED_LINES.some(a => (leg.line?.name || "").includes(a)) &&
         leg.line?.product === "suburban"
       );
+      const hasBus = journey.legs.some((leg: any) => (leg.line?.name || "").toLowerCase().includes("bus"));
+      
       const firstLeg = journey.legs[0];
       const lastLeg  = journey.legs[journey.legs.length - 1];
+
+      let displayName = sbLeg?.line?.name || firstLeg.line?.name || "S-Bahn";
+      if (hasBus) {
+        displayName = displayName.includes("Bus") ? displayName : `${displayName} (Ersatz-Bus)`;
+      }
 
       return {
         plannedDeparture:  firstLeg.plannedDeparture,
@@ -74,7 +81,7 @@ export async function GET(request: Request) {
         cancelled:         firstLeg.cancelled || sbLeg?.cancelled,
         departurePlatform: firstLeg.departurePlatform,
         plannedArrival:    lastLeg.plannedArrival,
-        line:              sbLeg?.line || firstLeg.line,
+        line:              { name: displayName },
         direction:         sbLeg?.direction || "Düsseldorf Hbf",
         origin:            firstLeg.origin,
         destination:       lastLeg.destination,

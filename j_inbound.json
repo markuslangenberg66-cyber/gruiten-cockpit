@@ -1,0 +1,1816 @@
+{
+  "earlierRef": "3|OB|MTµ14µ125040µ125040µ125069µ125069µ0µ0µ165µ125030µ1µ0µ26µ0µ0µ-2147483648µ1µ2|PDHµ9bedf0858e5ab1e40455340cc3ae2880|RDµ8032026|RTµ195300|USµ0|RSµINIT",
+  "laterRef": "3|OF|MTµ14µ125100µ125100µ125129µ125129µ0µ0µ165µ125083µ5µ0µ26µ0µ0µ-2147483648µ1µ2|PDHµ9bedf0858e5ab1e40455340cc3ae2880|RDµ8032026|RTµ195300|USµ0|RSµINIT",
+  "journeys": [
+    {
+      "type": "journey",
+      "legs": [
+        {
+          "origin": {
+            "id": "8000085",
+            "name": "Düsseldorf Hbf",
+            "type": "station",
+            "location": {
+              "type": "location",
+              "id": "8000085",
+              "latitude": 51.219707,
+              "longitude": 6.794011
+            },
+            "products": {
+              "nationalExpress": true,
+              "national": true,
+              "regionalExpress": true,
+              "regional": true,
+              "suburban": true,
+              "subway": false,
+              "tram": false,
+              "bus": false,
+              "taxi": false,
+              "ferry": false
+            },
+            "weight": 2656741.6,
+            "ril100Ids": [
+              "KD"
+            ],
+            "ifoptId": "de:05111:18235",
+            "priceCategory": 1,
+            "transitAuthority": "VRR",
+            "stadaId": "1401"
+          },
+          "destination": {
+            "id": "8002869",
+            "name": "Hochdahl-Millrath",
+            "type": "station",
+            "location": {
+              "type": "location",
+              "id": "8002869",
+              "latitude": 51.216473,
+              "longitude": 6.966631
+            },
+            "products": {
+              "nationalExpress": false,
+              "national": false,
+              "regionalExpress": false,
+              "regional": true,
+              "suburban": true,
+              "subway": false,
+              "tram": false,
+              "bus": false,
+              "taxi": false,
+              "ferry": false
+            },
+            "weight": 1520.9,
+            "ril100Ids": [
+              "KHOM"
+            ],
+            "ifoptId": "de:05158:19720",
+            "priceCategory": 5,
+            "transitAuthority": "VRR",
+            "stadaId": "2799"
+          },
+          "departure": "2026-03-08T20:00:00+01:00",
+          "plannedDeparture": "2026-03-08T20:00:00+01:00",
+          "departureDelay": 0,
+          "arrival": "2026-03-08T20:13:00+01:00",
+          "plannedArrival": "2026-03-08T20:13:00+01:00",
+          "arrivalDelay": 0,
+          "tripId": "2|#VN#1#ST#1772647589#PI#0#ZI#263931#TA#0#DA#80326#1S#8000253#1T#1924#LS#8006719#LT#2040#PU#80#RT#1#CA#DBS#ZE#S8#ZB#               S8#PC#4#FR#8000253#FT#1924#TO#8006719#TT#2040#",
+          "line": {
+            "type": "line",
+            "id": "s-31827",
+            "fahrtNr": "31827",
+            "name": "S8",
+            "public": true,
+            "adminCode": "800354",
+            "productName": "S",
+            "mode": "train",
+            "product": "suburban",
+            "operator": {
+              "type": "operator",
+              "id": "db-regio-ag-nrw",
+              "name": "DB Regio AG NRW"
+            }
+          },
+          "direction": "Wuppertal-Oberbarmen",
+          "arrivalPlatform": "1",
+          "plannedArrivalPlatform": "1",
+          "departurePlatform": "13",
+          "plannedDeparturePlatform": "13",
+          "remarks": [
+            {
+              "summary": "Disruption. (Quelle: zuginfo.nrw)",
+              "text": "Die Strecke ist zwischen Mönchengladbach Hbf und Neuss Hbf beeinträchtigt. Das Ende können wir leider noch nicht abschätzen. Der Grund dafür ist die Reparatur an einem Signal. Die Züge fahren im betroffenen Bereich langsamer. In der Folge kommt es zu Verspätungen und Teilausfällen. Weitere Informationen finden Sie auf zuginfo.nrw oder unter folgendem Link: https://zuginfo.nrw?msg=129572",
+              "type": "status",
+              "modified": "2026-03-08T19:26:31+01:00"
+            },
+            {
+              "text": "Number of bicycles conveyed limited",
+              "type": "hint",
+              "code": "bicycle-conveyance",
+              "summary": "bicycles conveyed"
+            },
+            {
+              "text": "Vehicle-bound boarding aid available",
+              "type": "hint",
+              "code": "boarding-ramp",
+              "summary": "vehicle-mounted boarding ramp available"
+            },
+            {
+              "text": "WC accessible for wheelchair",
+              "type": "hint",
+              "code": "wheelchair-accessible-toilet",
+              "summary": "wheelchair-accessible toilet available"
+            },
+            {
+              "code": "TO",
+              "summary": "Toilet on board",
+              "text": "Toilet on board",
+              "type": "hint",
+              "priority": 700
+            }
+          ],
+          "loadFactor": "low-to-medium"
+        },
+        {
+          "origin": {
+            "id": "8002869",
+            "name": "Hochdahl-Millrath",
+            "type": "station",
+            "location": {
+              "type": "location",
+              "id": "8002869",
+              "latitude": 51.216473,
+              "longitude": 6.966631
+            },
+            "products": {
+              "nationalExpress": false,
+              "national": false,
+              "regionalExpress": false,
+              "regional": true,
+              "suburban": true,
+              "subway": false,
+              "tram": false,
+              "bus": false,
+              "taxi": false,
+              "ferry": false
+            },
+            "weight": 1520.9,
+            "ril100Ids": [
+              "KHOM"
+            ],
+            "ifoptId": "de:05158:19720",
+            "priceCategory": 5,
+            "transitAuthority": "VRR",
+            "stadaId": "2799"
+          },
+          "destination": {
+            "id": "219774",
+            "name": "Millrath S/Feldstraße, Erkrath",
+            "type": "stop",
+            "location": {
+              "type": "location",
+              "id": "219774",
+              "latitude": 51.215843,
+              "longitude": 6.968501
+            },
+            "products": {
+              "nationalExpress": false,
+              "national": false,
+              "regionalExpress": false,
+              "regional": false,
+              "suburban": false,
+              "subway": false,
+              "tram": false,
+              "bus": true,
+              "taxi": false,
+              "ferry": false
+            },
+            "weight": 0.1,
+            "station": {
+              "id": "8002869",
+              "name": "Hochdahl-Millrath",
+              "type": "station",
+              "location": {
+                "id": "8002869",
+                "type": "location",
+                "latitude": 51.216501,
+                "longitude": 6.966684
+              },
+              "products": {
+                "nationalExpress": false,
+                "national": false,
+                "regionalExpress": false,
+                "regional": true,
+                "suburban": true,
+                "subway": false,
+                "tram": false,
+                "bus": false,
+                "taxi": false,
+                "ferry": false
+              },
+              "weight": 1520.9,
+              "ril100Ids": [
+                "KHOM"
+              ],
+              "ifoptId": "de:05158:19720",
+              "priceCategory": 5,
+              "transitAuthority": "VRR",
+              "stadaId": "2799"
+            }
+          },
+          "departure": "2026-03-08T20:13:00+01:00",
+          "plannedDeparture": "2026-03-08T20:13:00+01:00",
+          "departureDelay": 0,
+          "arrival": "2026-03-08T20:16:00+01:00",
+          "plannedArrival": "2026-03-08T20:16:00+01:00",
+          "arrivalDelay": 0,
+          "public": true,
+          "walking": true,
+          "distance": 148
+        },
+        {
+          "origin": {
+            "id": "219774",
+            "name": "Millrath S/Feldstraße, Erkrath",
+            "type": "stop",
+            "location": {
+              "type": "location",
+              "id": "219774",
+              "latitude": 51.215843,
+              "longitude": 6.968501
+            },
+            "products": {
+              "nationalExpress": false,
+              "national": false,
+              "regionalExpress": false,
+              "regional": false,
+              "suburban": false,
+              "subway": false,
+              "tram": false,
+              "bus": true,
+              "taxi": false,
+              "ferry": false
+            },
+            "weight": 0.1,
+            "station": {
+              "id": "8002869",
+              "name": "Hochdahl-Millrath",
+              "type": "station",
+              "location": {
+                "id": "8002869",
+                "type": "location",
+                "latitude": 51.216501,
+                "longitude": 6.966684
+              },
+              "products": {
+                "nationalExpress": false,
+                "national": false,
+                "regionalExpress": false,
+                "regional": true,
+                "suburban": true,
+                "subway": false,
+                "tram": false,
+                "bus": false,
+                "taxi": false,
+                "ferry": false
+              },
+              "weight": 1520.9,
+              "ril100Ids": [
+                "KHOM"
+              ],
+              "ifoptId": "de:05158:19720",
+              "priceCategory": 5,
+              "transitAuthority": "VRR",
+              "stadaId": "2799"
+            }
+          },
+          "destination": {
+            "type": "station",
+            "id": "230303",
+            "name": "Gruiten Bahnhof, Haan",
+            "location": {
+              "type": "location",
+              "id": "230303",
+              "latitude": 51.215034,
+              "longitude": 7.011011
+            }
+          },
+          "departure": "2026-03-08T20:22:00+01:00",
+          "plannedDeparture": "2026-03-08T20:22:00+01:00",
+          "departureDelay": 0,
+          "arrival": "2026-03-08T20:29:00+01:00",
+          "plannedArrival": "2026-03-08T20:29:00+01:00",
+          "arrivalDelay": 0,
+          "tripId": "2|#VN#1#ST#1772647589#PI#0#ZI#364556#TA#0#DA#80326#1S#219774#1T#2022#LS#230303#LT#2029#PU#80#RT#1#CA#Bsv#ZE#S8#ZB#Bus            S8#PC#3#FR#219774#FT#2022#TO#230303#TT#2029#",
+          "line": {
+            "type": "line",
+            "id": "bus-8629",
+            "fahrtNr": "8629",
+            "name": "Bus S8",
+            "public": true,
+            "adminCode": "goo030",
+            "productName": "Bus",
+            "operator": {
+              "type": "operator",
+              "id": "go-on-gesellschaft-fur-bus-und-schienenverkehr-mbh",
+              "name": "go.on Gesellschaft für Bus- und Schienenverkehr mbH"
+            }
+          },
+          "direction": "Gruiten Bahnhof, Haan",
+          "arrivalPlatform": null,
+          "plannedArrivalPlatform": null,
+          "departurePlatform": null,
+          "plannedDeparturePlatform": null,
+          "remarks": [
+            {
+              "code": "SV",
+              "summary": "replacement service",
+              "text": "replacement service",
+              "type": "warning",
+              "priority": 17
+            },
+            {
+              "code": "NT",
+              "summary": "Keine Mitnahme von Elektro-Tretrollern",
+              "text": "Keine Mitnahme von Elektro-Tretrollern",
+              "type": "hint",
+              "priority": 265
+            },
+            {
+              "code": "PE",
+              "summary": "Luggage restrictions apply",
+              "text": "Luggage restrictions apply",
+              "type": "hint",
+              "priority": 270
+            },
+            {
+              "text": "Behindertengerechtes Fahrzeug",
+              "type": "hint",
+              "code": "barrier-free-vehicle",
+              "summary": "barrier-free vehicle"
+            },
+            {
+              "text": "Wifi available",
+              "type": "hint",
+              "code": "wifi",
+              "summary": "WiFi available"
+            }
+          ],
+          "loadFactor": "low-to-medium"
+        }
+      ],
+      "refreshToken": "¶HKI¶T$A=1@O=Düsseldorf Hbf@X=6794317@Y=51219960@L=8000085@a=128@$A=1@O=Hochdahl-Millrath@X=6966685@Y=51216499@L=8002869@a=128@$202603082000$202603082013$               S8$$1$$$$$$§W$A=1@O=Hochdahl-Millrath@X=6966685@Y=51216499@L=8002869@a=128@$A=1@O=Millrath S/Feldstraße, Erkrath@X=6968501@Y=51215843@L=219774@a=128@$202603082013$202603082016$$$1$$$$$$§T$A=1@O=Millrath S/Feldstraße, Erkrath@X=6968501@Y=51215843@L=219774@a=128@$A=1@O=Gruiten Bahnhof, Haan@X=7011011@Y=51215034@L=230303@a=128@$202603082022$202603082029$Bus            S8$$1$$$$$$",
+      "remarks": []
+    },
+    {
+      "type": "journey",
+      "legs": [
+        {
+          "origin": {
+            "id": "8000085",
+            "name": "Düsseldorf Hbf",
+            "type": "station",
+            "location": {
+              "type": "location",
+              "id": "8000085",
+              "latitude": 51.219707,
+              "longitude": 6.794011
+            },
+            "products": {
+              "nationalExpress": true,
+              "national": true,
+              "regionalExpress": true,
+              "regional": true,
+              "suburban": true,
+              "subway": false,
+              "tram": false,
+              "bus": false,
+              "taxi": false,
+              "ferry": false
+            },
+            "weight": 2656741.6,
+            "ril100Ids": [
+              "KD"
+            ],
+            "ifoptId": "de:05111:18235",
+            "priceCategory": 1,
+            "transitAuthority": "VRR",
+            "stadaId": "1401"
+          },
+          "destination": {
+            "id": "8006718",
+            "name": "Wuppertal-Vohwinkel",
+            "type": "station",
+            "location": {
+              "type": "location",
+              "id": "8006718",
+              "latitude": 51.23408,
+              "longitude": 7.071823
+            },
+            "products": {
+              "nationalExpress": false,
+              "national": false,
+              "regionalExpress": false,
+              "regional": true,
+              "suburban": true,
+              "subway": false,
+              "tram": false,
+              "bus": false,
+              "taxi": false,
+              "ferry": false
+            },
+            "weight": 41063.6,
+            "ril100Ids": [
+              "KWV"
+            ],
+            "ifoptId": "de:05124:11302",
+            "priceCategory": 3,
+            "transitAuthority": "VRR",
+            "stadaId": "6937"
+          },
+          "departure": "2026-03-08T20:12:00+01:00",
+          "plannedDeparture": "2026-03-08T20:12:00+01:00",
+          "departureDelay": 0,
+          "arrival": "2026-03-08T20:30:00+01:00",
+          "plannedArrival": "2026-03-08T20:30:00+01:00",
+          "arrivalDelay": 0,
+          "tripId": "2|#VN#1#ST#1772647589#PI#0#ZI#328749#TA#0#DA#80326#1S#8400644#1T#1905#LS#8000142#LT#2110#PU#80#RT#1#CA#DRB#ZE#20093#ZB#            20093#PC#3#FR#8400644#FT#1905#TO#8000142#TT#2110#",
+          "line": {
+            "type": "line",
+            "id": "erb-20093",
+            "fahrtNr": "20093",
+            "name": "RE13",
+            "public": true,
+            "adminCode": "R2RE__",
+            "productName": "ERB",
+            "mode": "train",
+            "product": "regional",
+            "operator": {
+              "type": "operator",
+              "id": "eurobahn",
+              "name": "eurobahn"
+            }
+          },
+          "direction": "Hagen Hbf",
+          "arrivalPlatform": "6",
+          "plannedArrivalPlatform": "6",
+          "departurePlatform": "7",
+          "plannedDeparturePlatform": "7",
+          "remarks": [
+            {
+              "summary": "Construction work. (Quelle: zuginfo.nrw)",
+              "text": "Aufgrund von Generalsanierungen kommt es in diversen Zeiträumen ab dem 26.12.2025 bis zum 04.09.2026 zu Fahrplanänderungen auf der Linie RE 13. Weitere informationen finden Sie unter www.zuginfo.nrw oder direkt über den folgenden Link: https://zuginfo.nrw?msg=125485",
+              "type": "status",
+              "modified": "2026-03-05T11:37:21+01:00"
+            },
+            {
+              "summary": "Disruption. (Quelle: zuginfo.nrw)",
+              "text": "Die Strecke ist zwischen Mönchengladbach Hbf und Neuss Hbf beeinträchtigt. Das Ende können wir leider noch nicht abschätzen. Der Grund dafür ist die Reparatur an einem Signal. Die Züge fahren im betroffenen Bereich langsamer. In der Folge kommt es zu Verspätungen und Teilausfällen. Weitere Informationen finden Sie auf zuginfo.nrw oder unter folgendem Link: https://zuginfo.nrw?msg=129572",
+              "type": "status",
+              "modified": "2026-03-08T19:26:31+01:00"
+            },
+            {
+              "text": "Number of bicycles conveyed limited",
+              "type": "hint",
+              "code": "bicycle-conveyance",
+              "summary": "bicycles conveyed"
+            },
+            {
+              "text": "Vehicle-bound boarding aid available",
+              "type": "hint",
+              "code": "boarding-ramp",
+              "summary": "vehicle-mounted boarding ramp available"
+            },
+            {
+              "code": "EA",
+              "summary": "Behindertengerechte Ausstattung",
+              "text": "Behindertengerechte Ausstattung",
+              "type": "hint",
+              "priority": 560
+            },
+            {
+              "text": "power sockets for laptop",
+              "type": "hint",
+              "code": "power-sockets",
+              "summary": "power sockets available"
+            },
+            {
+              "text": "air conditioning",
+              "type": "hint",
+              "code": "air-conditioned",
+              "summary": "air-conditioned vehicle"
+            }
+          ]
+        },
+        {
+          "origin": {
+            "id": "8006718",
+            "name": "Wuppertal-Vohwinkel",
+            "type": "station",
+            "location": {
+              "type": "location",
+              "id": "8006718",
+              "latitude": 51.23408,
+              "longitude": 7.071823
+            },
+            "products": {
+              "nationalExpress": false,
+              "national": false,
+              "regionalExpress": false,
+              "regional": true,
+              "suburban": true,
+              "subway": false,
+              "tram": false,
+              "bus": false,
+              "taxi": false,
+              "ferry": false
+            },
+            "weight": 41063.6,
+            "ril100Ids": [
+              "KWV"
+            ],
+            "ifoptId": "de:05124:11302",
+            "priceCategory": 3,
+            "transitAuthority": "VRR",
+            "stadaId": "6937"
+          },
+          "destination": {
+            "id": "664798",
+            "name": "Vohwinkel Bahnhof, Wuppertal",
+            "type": "stop",
+            "location": {
+              "type": "location",
+              "id": "230418",
+              "latitude": 51.233994,
+              "longitude": 7.070483
+            },
+            "products": {
+              "nationalExpress": false,
+              "national": false,
+              "regionalExpress": false,
+              "regional": true,
+              "suburban": false,
+              "subway": false,
+              "tram": false,
+              "bus": true,
+              "taxi": true,
+              "ferry": false
+            },
+            "weight": 2.2,
+            "station": {
+              "id": "8006718",
+              "name": "Wuppertal-Vohwinkel",
+              "type": "station",
+              "location": {
+                "id": "8006718",
+                "type": "location",
+                "latitude": 51.234259,
+                "longitude": 7.071597
+              },
+              "products": {
+                "nationalExpress": false,
+                "national": false,
+                "regionalExpress": false,
+                "regional": true,
+                "suburban": true,
+                "subway": false,
+                "tram": false,
+                "bus": false,
+                "taxi": false,
+                "ferry": false
+              },
+              "weight": 41063.6,
+              "ril100Ids": [
+                "KWV"
+              ],
+              "ifoptId": "de:05124:11302",
+              "priceCategory": 3,
+              "transitAuthority": "VRR",
+              "stadaId": "6937"
+            }
+          },
+          "departure": "2026-03-08T20:30:00+01:00",
+          "plannedDeparture": "2026-03-08T20:30:00+01:00",
+          "departureDelay": 0,
+          "arrival": "2026-03-08T20:34:00+01:00",
+          "plannedArrival": "2026-03-08T20:34:00+01:00",
+          "arrivalDelay": 0,
+          "public": true,
+          "walking": true,
+          "distance": 94
+        },
+        {
+          "origin": {
+            "id": "664798",
+            "name": "Vohwinkel Bahnhof, Wuppertal",
+            "type": "stop",
+            "location": {
+              "type": "location",
+              "id": "230418",
+              "latitude": 51.233994,
+              "longitude": 7.070483
+            },
+            "products": {
+              "nationalExpress": false,
+              "national": false,
+              "regionalExpress": false,
+              "regional": true,
+              "suburban": false,
+              "subway": false,
+              "tram": false,
+              "bus": true,
+              "taxi": true,
+              "ferry": false
+            },
+            "weight": 2.2,
+            "station": {
+              "id": "8006718",
+              "name": "Wuppertal-Vohwinkel",
+              "type": "station",
+              "location": {
+                "id": "8006718",
+                "type": "location",
+                "latitude": 51.234259,
+                "longitude": 7.071597
+              },
+              "products": {
+                "nationalExpress": false,
+                "national": false,
+                "regionalExpress": false,
+                "regional": true,
+                "suburban": true,
+                "subway": false,
+                "tram": false,
+                "bus": false,
+                "taxi": false,
+                "ferry": false
+              },
+              "weight": 41063.6,
+              "ril100Ids": [
+                "KWV"
+              ],
+              "ifoptId": "de:05124:11302",
+              "priceCategory": 3,
+              "transitAuthority": "VRR",
+              "stadaId": "6937"
+            }
+          },
+          "destination": {
+            "type": "station",
+            "id": "230303",
+            "name": "Gruiten Bahnhof, Haan",
+            "location": {
+              "type": "location",
+              "id": "230303",
+              "latitude": 51.215034,
+              "longitude": 7.011011
+            }
+          },
+          "departure": "2026-03-08T20:42:00+01:00",
+          "plannedDeparture": "2026-03-08T20:42:00+01:00",
+          "departureDelay": null,
+          "arrival": "2026-03-08T20:54:00+01:00",
+          "plannedArrival": "2026-03-08T20:54:00+01:00",
+          "arrivalDelay": null,
+          "tripId": "2|#VN#1#ST#1772647589#PI#0#ZI#237296#TA#3#DA#80326#1S#664756#1T#2027#LS#993014#LT#2238#PU#80#RT#1#CA#Bsv#ZE#RB48#ZB#Bus          RB48#PC#3#FR#664756#FT#2027#TO#993014#TT#2238#",
+          "line": {
+            "type": "line",
+            "id": "bus-26230",
+            "fahrtNr": "26230",
+            "name": "Bus RB48",
+            "public": true,
+            "adminCode": "B2SEV_",
+            "productName": "Bus",
+            "operator": {
+              "type": "operator",
+              "id": "db-sev-gmbh",
+              "name": "DB SEV GmbH"
+            }
+          },
+          "direction": "Messe/Deutz Bahnhof, Köln",
+          "arrivalPlatform": null,
+          "plannedArrivalPlatform": null,
+          "departurePlatform": null,
+          "plannedDeparturePlatform": null,
+          "remarks": [
+            {
+              "code": "SV",
+              "summary": "replacement service",
+              "text": "replacement service",
+              "type": "warning",
+              "priority": 17
+            },
+            {
+              "text": "Behindertengerechtes Fahrzeug",
+              "type": "hint",
+              "code": "barrier-free-vehicle",
+              "summary": "barrier-free vehicle"
+            },
+            {
+              "text": "Wifi available",
+              "type": "hint",
+              "code": "wifi",
+              "summary": "WiFi available"
+            }
+          ]
+        }
+      ],
+      "refreshToken": "¶HKI¶T$A=1@O=Düsseldorf Hbf@X=6794317@Y=51219960@L=8000085@a=128@$A=1@O=Wuppertal-Vohwinkel@X=7071598@Y=51234262@L=8006718@a=128@$202603082012$202603082030$            20093$$1$$$$$$§W$A=1@O=Wuppertal-Vohwinkel@X=7071598@Y=51234262@L=8006718@a=128@$A=1@O=Vohwinkel Bahnhof, Wuppertal@X=7070483@Y=51233992@L=230418@a=128@$202603082030$202603082034$$$1$$$$$$§T$A=1@O=Vohwinkel Bahnhof, Wuppertal@X=7070483@Y=51233992@L=230418@a=128@$A=1@O=Gruiten Bahnhof, Haan@X=7011011@Y=51215034@L=230303@a=128@$202603082042$202603082054$Bus          RB48$$1$$$$$$",
+      "remarks": []
+    },
+    {
+      "type": "journey",
+      "legs": [
+        {
+          "origin": {
+            "id": "8000085",
+            "name": "Düsseldorf Hbf",
+            "type": "station",
+            "location": {
+              "type": "location",
+              "id": "8000085",
+              "latitude": 51.219707,
+              "longitude": 6.794011
+            },
+            "products": {
+              "nationalExpress": true,
+              "national": true,
+              "regionalExpress": true,
+              "regional": true,
+              "suburban": true,
+              "subway": false,
+              "tram": false,
+              "bus": false,
+              "taxi": false,
+              "ferry": false
+            },
+            "weight": 2656741.6,
+            "ril100Ids": [
+              "KD"
+            ],
+            "ifoptId": "de:05111:18235",
+            "priceCategory": 1,
+            "transitAuthority": "VRR",
+            "stadaId": "1401"
+          },
+          "destination": {
+            "id": "8002869",
+            "name": "Hochdahl-Millrath",
+            "type": "station",
+            "location": {
+              "type": "location",
+              "id": "8002869",
+              "latitude": 51.216473,
+              "longitude": 6.966631
+            },
+            "products": {
+              "nationalExpress": false,
+              "national": false,
+              "regionalExpress": false,
+              "regional": true,
+              "suburban": true,
+              "subway": false,
+              "tram": false,
+              "bus": false,
+              "taxi": false,
+              "ferry": false
+            },
+            "weight": 1520.9,
+            "ril100Ids": [
+              "KHOM"
+            ],
+            "ifoptId": "de:05158:19720",
+            "priceCategory": 5,
+            "transitAuthority": "VRR",
+            "stadaId": "2799"
+          },
+          "departure": "2026-03-08T20:30:00+01:00",
+          "plannedDeparture": "2026-03-08T20:30:00+01:00",
+          "departureDelay": 0,
+          "arrival": "2026-03-08T20:43:00+01:00",
+          "plannedArrival": "2026-03-08T20:43:00+01:00",
+          "arrivalDelay": 0,
+          "tripId": "2|#VN#1#ST#1772647589#PI#0#ZI#263936#TA#0#DA#80326#1S#8000253#1T#1954#LS#8000142#LT#2148#PU#80#RT#1#CA#DBS#ZE#S8#ZB#               S8#PC#4#FR#8000253#FT#1954#TO#8000142#TT#2148#",
+          "line": {
+            "type": "line",
+            "id": "s-31829",
+            "fahrtNr": "31829",
+            "name": "S8",
+            "public": true,
+            "adminCode": "800354",
+            "productName": "S",
+            "mode": "train",
+            "product": "suburban",
+            "operator": {
+              "type": "operator",
+              "id": "db-regio-ag-nrw",
+              "name": "DB Regio AG NRW"
+            }
+          },
+          "direction": "Hagen Hbf",
+          "arrivalPlatform": "1",
+          "plannedArrivalPlatform": "1",
+          "departurePlatform": "13",
+          "plannedDeparturePlatform": "13",
+          "remarks": [
+            {
+              "summary": "Disruption. (Quelle: zuginfo.nrw)",
+              "text": "Die Strecke ist zwischen Mönchengladbach Hbf und Neuss Hbf beeinträchtigt. Das Ende können wir leider noch nicht abschätzen. Der Grund dafür ist die Reparatur an einem Signal. Die Züge fahren im betroffenen Bereich langsamer. In der Folge kommt es zu Verspätungen und Teilausfällen. Weitere Informationen finden Sie auf zuginfo.nrw oder unter folgendem Link: https://zuginfo.nrw?msg=129572",
+              "type": "status",
+              "modified": "2026-03-08T19:26:31+01:00"
+            },
+            {
+              "text": "Number of bicycles conveyed limited",
+              "type": "hint",
+              "code": "bicycle-conveyance",
+              "summary": "bicycles conveyed"
+            },
+            {
+              "text": "Vehicle-bound boarding aid available",
+              "type": "hint",
+              "code": "boarding-ramp",
+              "summary": "vehicle-mounted boarding ramp available"
+            },
+            {
+              "text": "WC accessible for wheelchair",
+              "type": "hint",
+              "code": "wheelchair-accessible-toilet",
+              "summary": "wheelchair-accessible toilet available"
+            },
+            {
+              "code": "TO",
+              "summary": "Toilet on board",
+              "text": "Toilet on board",
+              "type": "hint",
+              "priority": 700
+            }
+          ],
+          "loadFactor": "low-to-medium"
+        },
+        {
+          "origin": {
+            "id": "8002869",
+            "name": "Hochdahl-Millrath",
+            "type": "station",
+            "location": {
+              "type": "location",
+              "id": "8002869",
+              "latitude": 51.216473,
+              "longitude": 6.966631
+            },
+            "products": {
+              "nationalExpress": false,
+              "national": false,
+              "regionalExpress": false,
+              "regional": true,
+              "suburban": true,
+              "subway": false,
+              "tram": false,
+              "bus": false,
+              "taxi": false,
+              "ferry": false
+            },
+            "weight": 1520.9,
+            "ril100Ids": [
+              "KHOM"
+            ],
+            "ifoptId": "de:05158:19720",
+            "priceCategory": 5,
+            "transitAuthority": "VRR",
+            "stadaId": "2799"
+          },
+          "destination": {
+            "id": "219774",
+            "name": "Millrath S/Feldstraße, Erkrath",
+            "type": "stop",
+            "location": {
+              "type": "location",
+              "id": "219774",
+              "latitude": 51.215843,
+              "longitude": 6.968501
+            },
+            "products": {
+              "nationalExpress": false,
+              "national": false,
+              "regionalExpress": false,
+              "regional": false,
+              "suburban": false,
+              "subway": false,
+              "tram": false,
+              "bus": true,
+              "taxi": false,
+              "ferry": false
+            },
+            "weight": 0.1,
+            "station": {
+              "id": "8002869",
+              "name": "Hochdahl-Millrath",
+              "type": "station",
+              "location": {
+                "id": "8002869",
+                "type": "location",
+                "latitude": 51.216501,
+                "longitude": 6.966684
+              },
+              "products": {
+                "nationalExpress": false,
+                "national": false,
+                "regionalExpress": false,
+                "regional": true,
+                "suburban": true,
+                "subway": false,
+                "tram": false,
+                "bus": false,
+                "taxi": false,
+                "ferry": false
+              },
+              "weight": 1520.9,
+              "ril100Ids": [
+                "KHOM"
+              ],
+              "ifoptId": "de:05158:19720",
+              "priceCategory": 5,
+              "transitAuthority": "VRR",
+              "stadaId": "2799"
+            }
+          },
+          "departure": "2026-03-08T20:43:00+01:00",
+          "plannedDeparture": "2026-03-08T20:43:00+01:00",
+          "departureDelay": 0,
+          "arrival": "2026-03-08T20:46:00+01:00",
+          "plannedArrival": "2026-03-08T20:46:00+01:00",
+          "arrivalDelay": 0,
+          "public": true,
+          "walking": true,
+          "distance": 148
+        },
+        {
+          "origin": {
+            "id": "219774",
+            "name": "Millrath S/Feldstraße, Erkrath",
+            "type": "stop",
+            "location": {
+              "type": "location",
+              "id": "219774",
+              "latitude": 51.215843,
+              "longitude": 6.968501
+            },
+            "products": {
+              "nationalExpress": false,
+              "national": false,
+              "regionalExpress": false,
+              "regional": false,
+              "suburban": false,
+              "subway": false,
+              "tram": false,
+              "bus": true,
+              "taxi": false,
+              "ferry": false
+            },
+            "weight": 0.1,
+            "station": {
+              "id": "8002869",
+              "name": "Hochdahl-Millrath",
+              "type": "station",
+              "location": {
+                "id": "8002869",
+                "type": "location",
+                "latitude": 51.216501,
+                "longitude": 6.966684
+              },
+              "products": {
+                "nationalExpress": false,
+                "national": false,
+                "regionalExpress": false,
+                "regional": true,
+                "suburban": true,
+                "subway": false,
+                "tram": false,
+                "bus": false,
+                "taxi": false,
+                "ferry": false
+              },
+              "weight": 1520.9,
+              "ril100Ids": [
+                "KHOM"
+              ],
+              "ifoptId": "de:05158:19720",
+              "priceCategory": 5,
+              "transitAuthority": "VRR",
+              "stadaId": "2799"
+            }
+          },
+          "destination": {
+            "type": "station",
+            "id": "230303",
+            "name": "Gruiten Bahnhof, Haan",
+            "location": {
+              "type": "location",
+              "id": "230303",
+              "latitude": 51.215034,
+              "longitude": 7.011011
+            }
+          },
+          "departure": "2026-03-08T20:52:00+01:00",
+          "plannedDeparture": "2026-03-08T20:52:00+01:00",
+          "departureDelay": 0,
+          "arrival": "2026-03-08T20:59:00+01:00",
+          "plannedArrival": "2026-03-08T20:59:00+01:00",
+          "arrivalDelay": 0,
+          "tripId": "2|#VN#1#ST#1772647589#PI#0#ZI#364552#TA#2#DA#80326#1S#219774#1T#2052#LS#230303#LT#2059#PU#80#RT#1#CA#Bsv#ZE#S8#ZB#Bus            S8#PC#3#FR#219774#FT#2052#TO#230303#TT#2059#",
+          "line": {
+            "type": "line",
+            "id": "bus-8631",
+            "fahrtNr": "8631",
+            "name": "Bus S8",
+            "public": true,
+            "adminCode": "goo030",
+            "productName": "Bus",
+            "operator": {
+              "type": "operator",
+              "id": "go-on-gesellschaft-fur-bus-und-schienenverkehr-mbh",
+              "name": "go.on Gesellschaft für Bus- und Schienenverkehr mbH"
+            }
+          },
+          "direction": "Gruiten Bahnhof, Haan",
+          "arrivalPlatform": null,
+          "plannedArrivalPlatform": null,
+          "departurePlatform": null,
+          "plannedDeparturePlatform": null,
+          "remarks": [
+            {
+              "code": "SV",
+              "summary": "replacement service",
+              "text": "replacement service",
+              "type": "warning",
+              "priority": 17
+            },
+            {
+              "code": "NT",
+              "summary": "Keine Mitnahme von Elektro-Tretrollern",
+              "text": "Keine Mitnahme von Elektro-Tretrollern",
+              "type": "hint",
+              "priority": 265
+            },
+            {
+              "code": "PE",
+              "summary": "Luggage restrictions apply",
+              "text": "Luggage restrictions apply",
+              "type": "hint",
+              "priority": 270
+            },
+            {
+              "text": "Behindertengerechtes Fahrzeug",
+              "type": "hint",
+              "code": "barrier-free-vehicle",
+              "summary": "barrier-free vehicle"
+            },
+            {
+              "text": "Wifi available",
+              "type": "hint",
+              "code": "wifi",
+              "summary": "WiFi available"
+            }
+          ]
+        }
+      ],
+      "refreshToken": "¶HKI¶T$A=1@O=Düsseldorf Hbf@X=6794317@Y=51219960@L=8000085@a=128@$A=1@O=Hochdahl-Millrath@X=6966685@Y=51216499@L=8002869@a=128@$202603082030$202603082043$               S8$$1$$$$$$§W$A=1@O=Hochdahl-Millrath@X=6966685@Y=51216499@L=8002869@a=128@$A=1@O=Millrath S/Feldstraße, Erkrath@X=6968501@Y=51215843@L=219774@a=128@$202603082043$202603082046$$$1$$$$$$§T$A=1@O=Millrath S/Feldstraße, Erkrath@X=6968501@Y=51215843@L=219774@a=128@$A=1@O=Gruiten Bahnhof, Haan@X=7011011@Y=51215034@L=230303@a=128@$202603082052$202603082059$Bus            S8$$1$$$$$$",
+      "remarks": []
+    },
+    {
+      "type": "journey",
+      "legs": [
+        {
+          "origin": {
+            "id": "8000085",
+            "name": "Düsseldorf Hbf",
+            "type": "station",
+            "location": {
+              "type": "location",
+              "id": "8000085",
+              "latitude": 51.219707,
+              "longitude": 6.794011
+            },
+            "products": {
+              "nationalExpress": true,
+              "national": true,
+              "regionalExpress": true,
+              "regional": true,
+              "suburban": true,
+              "subway": false,
+              "tram": false,
+              "bus": false,
+              "taxi": false,
+              "ferry": false
+            },
+            "weight": 2656741.6,
+            "ril100Ids": [
+              "KD"
+            ],
+            "ifoptId": "de:05111:18235",
+            "priceCategory": 1,
+            "transitAuthority": "VRR",
+            "stadaId": "1401"
+          },
+          "destination": {
+            "id": "8006718",
+            "name": "Wuppertal-Vohwinkel",
+            "type": "station",
+            "location": {
+              "type": "location",
+              "id": "8006718",
+              "latitude": 51.23408,
+              "longitude": 7.071823
+            },
+            "products": {
+              "nationalExpress": false,
+              "national": false,
+              "regionalExpress": false,
+              "regional": true,
+              "suburban": true,
+              "subway": false,
+              "tram": false,
+              "bus": false,
+              "taxi": false,
+              "ferry": false
+            },
+            "weight": 41063.6,
+            "ril100Ids": [
+              "KWV"
+            ],
+            "ifoptId": "de:05124:11302",
+            "priceCategory": 3,
+            "transitAuthority": "VRR",
+            "stadaId": "6937"
+          },
+          "departure": "2026-03-08T20:43:00+01:00",
+          "plannedDeparture": "2026-03-08T20:42:00+01:00",
+          "departureDelay": 60,
+          "arrival": null,
+          "plannedArrival": "2026-03-08T20:58:00+01:00",
+          "arrivalDelay": null,
+          "tripId": "2|#VN#1#ST#1772647589#PI#0#ZI#1601812#TA#0#DA#80326#1S#8000001#1T#1921#LS#8000080#LT#2150#PU#80#RT#3#CA#DRB#ZE#26433#ZB#            26433#PC#3#FR#8000001#FT#1921#TO#8000080#TT#2150#",
+          "line": {
+            "type": "line",
+            "id": "nx-26433",
+            "fahrtNr": "26433",
+            "name": "RE4",
+            "public": true,
+            "adminCode": "NXRE__",
+            "productName": "NX",
+            "mode": "train",
+            "product": "regional",
+            "operator": {
+              "type": "operator",
+              "id": "national-express",
+              "name": "National Express"
+            }
+          },
+          "direction": "Dortmund Hbf",
+          "arrivalPlatform": null,
+          "plannedArrivalPlatform": "6",
+          "departurePlatform": "7",
+          "plannedDeparturePlatform": "7",
+          "remarks": [
+            {
+              "summary": "Construction work. (Quelle: zuginfo.nrw)",
+              "text": "Aufgrund von Generalsanierungen kommt es in diversen Zeiträumen ab dem 26.12.2025 bis zum 04.09.2026 zu Fahrplanänderungen auf der Linie RE 4. Weitere Informationen finden Sie unter www.zuginfo.nrw oder direkt über den folgenden Link:https://zuginfo.nrw?msg=125489",
+              "type": "status",
+              "modified": "2026-03-02T17:43:49+01:00"
+            },
+            {
+              "summary": "Disruption. (Quelle: zuginfo.nrw)",
+              "text": "Die Strecke ist zwischen Mönchengladbach Hbf und Neuss Hbf beeinträchtigt. Das Ende können wir leider noch nicht abschätzen. Der Grund dafür ist die Reparatur an einem Signal. Die Züge fahren im betroffenen Bereich langsamer. In der Folge kommt es zu Verspätungen und Teilausfällen. Weitere Informationen finden Sie auf zuginfo.nrw oder unter folgendem Link: https://zuginfo.nrw?msg=129572",
+              "type": "status",
+              "modified": "2026-03-08T19:26:31+01:00"
+            },
+            {
+              "text": "Number of bicycles conveyed limited",
+              "type": "hint",
+              "code": "bicycle-conveyance",
+              "summary": "bicycles conveyed"
+            },
+            {
+              "text": "Behindertengerechtes Fahrzeug",
+              "type": "hint",
+              "code": "barrier-free-vehicle",
+              "summary": "barrier-free vehicle"
+            },
+            {
+              "text": "space for wheelchairs",
+              "type": "hint",
+              "code": "wheelchairs-space",
+              "summary": "space for wheelchairs"
+            },
+            {
+              "text": "WC accessible for wheelchair",
+              "type": "hint",
+              "code": "wheelchair-accessible-toilet",
+              "summary": "wheelchair-accessible toilet available"
+            },
+            {
+              "text": "power sockets for laptop",
+              "type": "hint",
+              "code": "power-sockets",
+              "summary": "power sockets available"
+            },
+            {
+              "text": "air conditioning",
+              "type": "hint",
+              "code": "air-conditioned",
+              "summary": "air-conditioned vehicle"
+            },
+            {
+              "text": "Wifi available",
+              "type": "hint",
+              "code": "wifi",
+              "summary": "WiFi available"
+            }
+          ],
+          "cancelled": true
+        },
+        {
+          "origin": {
+            "id": "8006718",
+            "name": "Wuppertal-Vohwinkel",
+            "type": "station",
+            "location": {
+              "type": "location",
+              "id": "8006718",
+              "latitude": 51.23408,
+              "longitude": 7.071823
+            },
+            "products": {
+              "nationalExpress": false,
+              "national": false,
+              "regionalExpress": false,
+              "regional": true,
+              "suburban": true,
+              "subway": false,
+              "tram": false,
+              "bus": false,
+              "taxi": false,
+              "ferry": false
+            },
+            "weight": 41063.6,
+            "ril100Ids": [
+              "KWV"
+            ],
+            "ifoptId": "de:05124:11302",
+            "priceCategory": 3,
+            "transitAuthority": "VRR",
+            "stadaId": "6937"
+          },
+          "destination": {
+            "id": "664798",
+            "name": "Vohwinkel Bahnhof, Wuppertal",
+            "type": "stop",
+            "location": {
+              "type": "location",
+              "id": "230418",
+              "latitude": 51.233994,
+              "longitude": 7.070483
+            },
+            "products": {
+              "nationalExpress": false,
+              "national": false,
+              "regionalExpress": false,
+              "regional": true,
+              "suburban": false,
+              "subway": false,
+              "tram": false,
+              "bus": true,
+              "taxi": true,
+              "ferry": false
+            },
+            "weight": 2.2,
+            "station": {
+              "id": "8006718",
+              "name": "Wuppertal-Vohwinkel",
+              "type": "station",
+              "location": {
+                "id": "8006718",
+                "type": "location",
+                "latitude": 51.234259,
+                "longitude": 7.071597
+              },
+              "products": {
+                "nationalExpress": false,
+                "national": false,
+                "regionalExpress": false,
+                "regional": true,
+                "suburban": true,
+                "subway": false,
+                "tram": false,
+                "bus": false,
+                "taxi": false,
+                "ferry": false
+              },
+              "weight": 41063.6,
+              "ril100Ids": [
+                "KWV"
+              ],
+              "ifoptId": "de:05124:11302",
+              "priceCategory": 3,
+              "transitAuthority": "VRR",
+              "stadaId": "6937"
+            }
+          },
+          "departure": "2026-03-08T20:58:00+01:00",
+          "plannedDeparture": "2026-03-08T20:58:00+01:00",
+          "departureDelay": 0,
+          "arrival": "2026-03-08T21:02:00+01:00",
+          "plannedArrival": "2026-03-08T21:02:00+01:00",
+          "arrivalDelay": 0,
+          "public": true,
+          "walking": true,
+          "distance": 94
+        },
+        {
+          "origin": {
+            "id": "664798",
+            "name": "Vohwinkel Bahnhof, Wuppertal",
+            "type": "stop",
+            "location": {
+              "type": "location",
+              "id": "230418",
+              "latitude": 51.233994,
+              "longitude": 7.070483
+            },
+            "products": {
+              "nationalExpress": false,
+              "national": false,
+              "regionalExpress": false,
+              "regional": true,
+              "suburban": false,
+              "subway": false,
+              "tram": false,
+              "bus": true,
+              "taxi": true,
+              "ferry": false
+            },
+            "weight": 2.2,
+            "station": {
+              "id": "8006718",
+              "name": "Wuppertal-Vohwinkel",
+              "type": "station",
+              "location": {
+                "id": "8006718",
+                "type": "location",
+                "latitude": 51.234259,
+                "longitude": 7.071597
+              },
+              "products": {
+                "nationalExpress": false,
+                "national": false,
+                "regionalExpress": false,
+                "regional": true,
+                "suburban": true,
+                "subway": false,
+                "tram": false,
+                "bus": false,
+                "taxi": false,
+                "ferry": false
+              },
+              "weight": 41063.6,
+              "ril100Ids": [
+                "KWV"
+              ],
+              "ifoptId": "de:05124:11302",
+              "priceCategory": 3,
+              "transitAuthority": "VRR",
+              "stadaId": "6937"
+            }
+          },
+          "destination": {
+            "type": "station",
+            "id": "230303",
+            "name": "Gruiten Bahnhof, Haan",
+            "location": {
+              "type": "location",
+              "id": "230303",
+              "latitude": 51.215034,
+              "longitude": 7.011011
+            }
+          },
+          "departure": "2026-03-08T21:12:00+01:00",
+          "plannedDeparture": "2026-03-08T21:12:00+01:00",
+          "departureDelay": null,
+          "arrival": "2026-03-08T21:24:00+01:00",
+          "plannedArrival": "2026-03-08T21:24:00+01:00",
+          "arrivalDelay": null,
+          "tripId": "2|#VN#1#ST#1772647589#PI#0#ZI#237296#TA#4#DA#80326#1S#664756#1T#2057#LS#993014#LT#2308#PU#80#RT#1#CA#Bsv#ZE#RB48#ZB#Bus          RB48#PC#3#FR#664756#FT#2057#TO#993014#TT#2308#",
+          "line": {
+            "type": "line",
+            "id": "bus-26234",
+            "fahrtNr": "26234",
+            "name": "Bus RB48",
+            "public": true,
+            "adminCode": "B2SEV_",
+            "productName": "Bus",
+            "operator": {
+              "type": "operator",
+              "id": "db-sev-gmbh",
+              "name": "DB SEV GmbH"
+            }
+          },
+          "direction": "Messe/Deutz Bahnhof, Köln",
+          "arrivalPlatform": null,
+          "plannedArrivalPlatform": null,
+          "departurePlatform": null,
+          "plannedDeparturePlatform": null,
+          "remarks": [
+            {
+              "code": "SV",
+              "summary": "replacement service",
+              "text": "replacement service",
+              "type": "warning",
+              "priority": 17
+            },
+            {
+              "text": "Behindertengerechtes Fahrzeug",
+              "type": "hint",
+              "code": "barrier-free-vehicle",
+              "summary": "barrier-free vehicle"
+            },
+            {
+              "text": "Wifi available",
+              "type": "hint",
+              "code": "wifi",
+              "summary": "WiFi available"
+            }
+          ]
+        }
+      ],
+      "refreshToken": "¶HKI¶T$A=1@O=Düsseldorf Hbf@X=6794317@Y=51219960@L=8000085@a=128@$A=1@O=Wuppertal-Vohwinkel@X=7071598@Y=51234262@L=8006718@a=128@$202603082042$202603082058$            26433$$3$$$$$$§W$A=1@O=Wuppertal-Vohwinkel@X=7071598@Y=51234262@L=8006718@a=128@$A=1@O=Vohwinkel Bahnhof, Wuppertal@X=7070483@Y=51233992@L=230418@a=128@$202603082058$202603082102$$$1$$$$$$§T$A=1@O=Vohwinkel Bahnhof, Wuppertal@X=7070483@Y=51233992@L=230418@a=128@$A=1@O=Gruiten Bahnhof, Haan@X=7011011@Y=51215034@L=230303@a=128@$202603082112$202603082124$Bus          RB48$$1$$$$$$",
+      "remarks": [
+        {
+          "summary": "Trip is not possible",
+          "text": "Trip is not possible",
+          "type": "warning"
+        }
+      ]
+    },
+    {
+      "type": "journey",
+      "legs": [
+        {
+          "origin": {
+            "id": "8000085",
+            "name": "Düsseldorf Hbf",
+            "type": "station",
+            "location": {
+              "type": "location",
+              "id": "8000085",
+              "latitude": 51.219707,
+              "longitude": 6.794011
+            },
+            "products": {
+              "nationalExpress": true,
+              "national": true,
+              "regionalExpress": true,
+              "regional": true,
+              "suburban": true,
+              "subway": false,
+              "tram": false,
+              "bus": false,
+              "taxi": false,
+              "ferry": false
+            },
+            "weight": 2656741.6,
+            "ril100Ids": [
+              "KD"
+            ],
+            "ifoptId": "de:05111:18235",
+            "priceCategory": 1,
+            "transitAuthority": "VRR",
+            "stadaId": "1401"
+          },
+          "destination": {
+            "id": "8002869",
+            "name": "Hochdahl-Millrath",
+            "type": "station",
+            "location": {
+              "type": "location",
+              "id": "8002869",
+              "latitude": 51.216473,
+              "longitude": 6.966631
+            },
+            "products": {
+              "nationalExpress": false,
+              "national": false,
+              "regionalExpress": false,
+              "regional": true,
+              "suburban": true,
+              "subway": false,
+              "tram": false,
+              "bus": false,
+              "taxi": false,
+              "ferry": false
+            },
+            "weight": 1520.9,
+            "ril100Ids": [
+              "KHOM"
+            ],
+            "ifoptId": "de:05158:19720",
+            "priceCategory": 5,
+            "transitAuthority": "VRR",
+            "stadaId": "2799"
+          },
+          "departure": "2026-03-08T21:00:00+01:00",
+          "plannedDeparture": "2026-03-08T21:00:00+01:00",
+          "departureDelay": null,
+          "arrival": "2026-03-08T21:13:00+01:00",
+          "plannedArrival": "2026-03-08T21:13:00+01:00",
+          "arrivalDelay": null,
+          "tripId": "2|#VN#1#ST#1772647589#PI#0#ZI#263943#TA#0#DA#80326#1S#8000253#1T#2024#LS#8006719#LT#2140#PU#80#RT#1#CA#DBS#ZE#S8#ZB#               S8#PC#4#FR#8000253#FT#2024#TO#8006719#TT#2140#",
+          "line": {
+            "type": "line",
+            "id": "s-31831",
+            "fahrtNr": "31831",
+            "name": "S8",
+            "public": true,
+            "adminCode": "800354",
+            "productName": "S",
+            "mode": "train",
+            "product": "suburban",
+            "operator": {
+              "type": "operator",
+              "id": "db-regio-ag-nrw",
+              "name": "DB Regio AG NRW"
+            }
+          },
+          "direction": "Wuppertal-Oberbarmen",
+          "arrivalPlatform": "1",
+          "plannedArrivalPlatform": "1",
+          "departurePlatform": "13",
+          "plannedDeparturePlatform": "13",
+          "remarks": [
+            {
+              "summary": "Disruption. (Quelle: zuginfo.nrw)",
+              "text": "Die Strecke ist zwischen Mönchengladbach Hbf und Neuss Hbf beeinträchtigt. Das Ende können wir leider noch nicht abschätzen. Der Grund dafür ist die Reparatur an einem Signal. Die Züge fahren im betroffenen Bereich langsamer. In der Folge kommt es zu Verspätungen und Teilausfällen. Weitere Informationen finden Sie auf zuginfo.nrw oder unter folgendem Link: https://zuginfo.nrw?msg=129572",
+              "type": "status",
+              "modified": "2026-03-08T19:26:31+01:00"
+            },
+            {
+              "text": "Number of bicycles conveyed limited",
+              "type": "hint",
+              "code": "bicycle-conveyance",
+              "summary": "bicycles conveyed"
+            },
+            {
+              "text": "Vehicle-bound boarding aid available",
+              "type": "hint",
+              "code": "boarding-ramp",
+              "summary": "vehicle-mounted boarding ramp available"
+            },
+            {
+              "text": "WC accessible for wheelchair",
+              "type": "hint",
+              "code": "wheelchair-accessible-toilet",
+              "summary": "wheelchair-accessible toilet available"
+            },
+            {
+              "code": "TO",
+              "summary": "Toilet on board",
+              "text": "Toilet on board",
+              "type": "hint",
+              "priority": 700
+            }
+          ],
+          "loadFactor": "low-to-medium"
+        },
+        {
+          "origin": {
+            "id": "8002869",
+            "name": "Hochdahl-Millrath",
+            "type": "station",
+            "location": {
+              "type": "location",
+              "id": "8002869",
+              "latitude": 51.216473,
+              "longitude": 6.966631
+            },
+            "products": {
+              "nationalExpress": false,
+              "national": false,
+              "regionalExpress": false,
+              "regional": true,
+              "suburban": true,
+              "subway": false,
+              "tram": false,
+              "bus": false,
+              "taxi": false,
+              "ferry": false
+            },
+            "weight": 1520.9,
+            "ril100Ids": [
+              "KHOM"
+            ],
+            "ifoptId": "de:05158:19720",
+            "priceCategory": 5,
+            "transitAuthority": "VRR",
+            "stadaId": "2799"
+          },
+          "destination": {
+            "id": "219774",
+            "name": "Millrath S/Feldstraße, Erkrath",
+            "type": "stop",
+            "location": {
+              "type": "location",
+              "id": "219774",
+              "latitude": 51.215843,
+              "longitude": 6.968501
+            },
+            "products": {
+              "nationalExpress": false,
+              "national": false,
+              "regionalExpress": false,
+              "regional": false,
+              "suburban": false,
+              "subway": false,
+              "tram": false,
+              "bus": true,
+              "taxi": false,
+              "ferry": false
+            },
+            "weight": 0.1,
+            "station": {
+              "id": "8002869",
+              "name": "Hochdahl-Millrath",
+              "type": "station",
+              "location": {
+                "id": "8002869",
+                "type": "location",
+                "latitude": 51.216501,
+                "longitude": 6.966684
+              },
+              "products": {
+                "nationalExpress": false,
+                "national": false,
+                "regionalExpress": false,
+                "regional": true,
+                "suburban": true,
+                "subway": false,
+                "tram": false,
+                "bus": false,
+                "taxi": false,
+                "ferry": false
+              },
+              "weight": 1520.9,
+              "ril100Ids": [
+                "KHOM"
+              ],
+              "ifoptId": "de:05158:19720",
+              "priceCategory": 5,
+              "transitAuthority": "VRR",
+              "stadaId": "2799"
+            }
+          },
+          "departure": "2026-03-08T21:13:00+01:00",
+          "plannedDeparture": "2026-03-08T21:13:00+01:00",
+          "departureDelay": null,
+          "arrival": "2026-03-08T21:16:00+01:00",
+          "plannedArrival": "2026-03-08T21:16:00+01:00",
+          "arrivalDelay": null,
+          "public": true,
+          "walking": true,
+          "distance": 148
+        },
+        {
+          "origin": {
+            "id": "219774",
+            "name": "Millrath S/Feldstraße, Erkrath",
+            "type": "stop",
+            "location": {
+              "type": "location",
+              "id": "219774",
+              "latitude": 51.215843,
+              "longitude": 6.968501
+            },
+            "products": {
+              "nationalExpress": false,
+              "national": false,
+              "regionalExpress": false,
+              "regional": false,
+              "suburban": false,
+              "subway": false,
+              "tram": false,
+              "bus": true,
+              "taxi": false,
+              "ferry": false
+            },
+            "weight": 0.1,
+            "station": {
+              "id": "8002869",
+              "name": "Hochdahl-Millrath",
+              "type": "station",
+              "location": {
+                "id": "8002869",
+                "type": "location",
+                "latitude": 51.216501,
+                "longitude": 6.966684
+              },
+              "products": {
+                "nationalExpress": false,
+                "national": false,
+                "regionalExpress": false,
+                "regional": true,
+                "suburban": true,
+                "subway": false,
+                "tram": false,
+                "bus": false,
+                "taxi": false,
+                "ferry": false
+              },
+              "weight": 1520.9,
+              "ril100Ids": [
+                "KHOM"
+              ],
+              "ifoptId": "de:05158:19720",
+              "priceCategory": 5,
+              "transitAuthority": "VRR",
+              "stadaId": "2799"
+            }
+          },
+          "destination": {
+            "type": "station",
+            "id": "230303",
+            "name": "Gruiten Bahnhof, Haan",
+            "location": {
+              "type": "location",
+              "id": "230303",
+              "latitude": 51.215034,
+              "longitude": 7.011011
+            }
+          },
+          "departure": "2026-03-08T21:22:00+01:00",
+          "plannedDeparture": "2026-03-08T21:22:00+01:00",
+          "departureDelay": 0,
+          "arrival": "2026-03-08T21:29:00+01:00",
+          "plannedArrival": "2026-03-08T21:29:00+01:00",
+          "arrivalDelay": 0,
+          "tripId": "2|#VN#1#ST#1772647589#PI#0#ZI#364558#TA#0#DA#80326#1S#219774#1T#2122#LS#230303#LT#2129#PU#80#RT#1#CA#Bsv#ZE#S8#ZB#Bus            S8#PC#3#FR#219774#FT#2122#TO#230303#TT#2129#",
+          "line": {
+            "type": "line",
+            "id": "bus-8633",
+            "fahrtNr": "8633",
+            "name": "Bus S8",
+            "public": true,
+            "adminCode": "goo030",
+            "productName": "Bus",
+            "operator": {
+              "type": "operator",
+              "id": "go-on-gesellschaft-fur-bus-und-schienenverkehr-mbh",
+              "name": "go.on Gesellschaft für Bus- und Schienenverkehr mbH"
+            }
+          },
+          "direction": "Gruiten Bahnhof, Haan",
+          "arrivalPlatform": null,
+          "plannedArrivalPlatform": null,
+          "departurePlatform": null,
+          "plannedDeparturePlatform": null,
+          "remarks": [
+            {
+              "code": "SV",
+              "summary": "replacement service",
+              "text": "replacement service",
+              "type": "warning",
+              "priority": 17
+            },
+            {
+              "code": "NT",
+              "summary": "Keine Mitnahme von Elektro-Tretrollern",
+              "text": "Keine Mitnahme von Elektro-Tretrollern",
+              "type": "hint",
+              "priority": 265
+            },
+            {
+              "code": "PE",
+              "summary": "Luggage restrictions apply",
+              "text": "Luggage restrictions apply",
+              "type": "hint",
+              "priority": 270
+            },
+            {
+              "text": "Behindertengerechtes Fahrzeug",
+              "type": "hint",
+              "code": "barrier-free-vehicle",
+              "summary": "barrier-free vehicle"
+            },
+            {
+              "text": "Wifi available",
+              "type": "hint",
+              "code": "wifi",
+              "summary": "WiFi available"
+            }
+          ],
+          "loadFactor": "low-to-medium"
+        }
+      ],
+      "refreshToken": "¶HKI¶T$A=1@O=Düsseldorf Hbf@X=6794317@Y=51219960@L=8000085@a=128@$A=1@O=Hochdahl-Millrath@X=6966685@Y=51216499@L=8002869@a=128@$202603082100$202603082113$               S8$$1$$$$$$§W$A=1@O=Hochdahl-Millrath@X=6966685@Y=51216499@L=8002869@a=128@$A=1@O=Millrath S/Feldstraße, Erkrath@X=6968501@Y=51215843@L=219774@a=128@$202603082113$202603082116$$$1$$$$$$§T$A=1@O=Millrath S/Feldstraße, Erkrath@X=6968501@Y=51215843@L=219774@a=128@$A=1@O=Gruiten Bahnhof, Haan@X=7011011@Y=51215034@L=230303@a=128@$202603082122$202603082129$Bus            S8$$1$$$$$$",
+      "remarks": []
+    }
+  ],
+  "realtimeDataUpdatedAt": null
+}
