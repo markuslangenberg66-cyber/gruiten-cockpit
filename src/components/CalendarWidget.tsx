@@ -4,42 +4,47 @@ import { Trash2 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import clsx from 'clsx';
 
-// ── Inline SVG: Gelber Sack ────────────────────────────────────────────────
-function GelberSackIcon({ size = 28 }: { size?: number }) {
+// ── Universelles Tonnen-Icon ───────────────────────────────────────────────
+function BinIcon({ lidColor, handleColor, bodyColor, stripeColor, size = 28 }: { lidColor: string, handleColor: string, bodyColor: string, stripeColor: string, size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 32 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-      {/* Sack-Knoten oben */}
-      <ellipse cx="16" cy="5" rx="5" ry="3.5" fill="#FCD34D" opacity="0.9"/>
-      <rect x="13" y="2" width="6" height="4" rx="2" fill="#F59E0B"/>
-      {/* Sack-Körper */}
-      <path d="M6 10 Q4 24 6 30 Q10 36 16 36 Q22 36 26 30 Q28 24 26 10 Q22 7 16 7 Q10 7 6 10Z"
-            fill="#FCD34D"/>
-      {/* Glanz-Reflex */}
-      <path d="M10 12 Q9 20 10 26" stroke="#FEF3C7" strokeWidth="2" strokeLinecap="round" opacity="0.6"/>
-      {/* Schattenfalten */}
-      <path d="M20 10 Q22 18 21 28" stroke="#D97706" strokeWidth="1.2" strokeLinecap="round" opacity="0.5"/>
-      <path d="M15 8 Q14 16 15 28" stroke="#D97706" strokeWidth="0.8" strokeLinecap="round" opacity="0.3"/>
-      {/* Verschluss-Knoten */}
-      <ellipse cx="16" cy="8" rx="4" ry="2" fill="#F59E0B"/>
+      {/* Räder */}
+      <rect x="5" y="30" width="3" height="4" rx="1.5" fill="#374151"/>
+      <rect x="24" y="30" width="3" height="4" rx="1.5" fill="#374151"/>
+      {/* Deckel */}
+      <rect x="4" y="5" width="24" height="5" rx="2.5" fill={lidColor}/>
+      <rect x="12" y="2" width="8" height="4" rx="2" fill={handleColor}/>
+      {/* Tonne-Körper */}
+      <path d="M6 10 L7 32 Q7 34 10 34 L22 34 Q25 34 25 32 L26 10Z" fill={bodyColor}/>
+      {/* Längsstreifen */}
+      <line x1="12" y1="12" x2="11" y2="30" stroke={stripeColor} strokeWidth="1.5" strokeLinecap="round"/>
+      <line x1="16" y1="12" x2="16" y2="30" stroke={stripeColor} strokeWidth="1.5" strokeLinecap="round"/>
+      <line x1="20" y1="12" x2="21" y2="30" stroke={stripeColor} strokeWidth="1.5" strokeLinecap="round"/>
+      {/* Glanz */}
+      <path d="M8 13 L8.5 28" stroke="#FFFFFF" strokeWidth="1.5" strokeLinecap="round" opacity="0.3"/>
     </svg>
   );
 }
 
-// ── Inline SVG: Restmüll-Tonne ─────────────────────────────────────────────
-function RestmuellIcon({ size = 28 }: { size?: number }) {
+// ── Schadstoffe Icon (Warndreieck) ─────────────────────────────────────────
+function SchadstoffeIcon({ size = 28 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 32 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-      {/* Deckel */}
-      <rect x="4" y="5" width="24" height="5" rx="2.5" fill="#6B7280"/>
-      <rect x="12" y="2" width="8" height="4" rx="2" fill="#4B5563"/>
-      {/* Tonne-Körper */}
-      <path d="M6 10 L7 32 Q7 34 10 34 L22 34 Q25 34 25 32 L26 10Z" fill="#9CA3AF"/>
-      {/* Längsstreifen */}
-      <line x1="12" y1="12" x2="11" y2="32" stroke="#6B7280" strokeWidth="1.5" strokeLinecap="round"/>
-      <line x1="16" y1="12" x2="16" y2="32" stroke="#6B7280" strokeWidth="1.5" strokeLinecap="round"/>
-      <line x1="20" y1="12" x2="21" y2="32" stroke="#6B7280" strokeWidth="1.5" strokeLinecap="round"/>
-      {/* Glanz */}
-      <path d="M8 13 L8.5 28" stroke="#E5E7EB" strokeWidth="1.5" strokeLinecap="round" opacity="0.4"/>
+      <path d="M16 5 L3 30 Q2 32 5 32 L27 32 Q30 32 29 30 Z" fill="#EF4444"/>
+      <rect x="14" y="12" width="4" height="10" rx="2" fill="#FFFFFF"/>
+      <circle cx="16" cy="27" r="2.5" fill="#FFFFFF"/>
+    </svg>
+  );
+}
+
+// ── Weihnachtsbaum Icon ───────────────────────────────────────────────────
+function TreeIcon({ size = 28 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 32 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="13" y="28" width="6" height="6" fill="#4B5563"/>
+      <path d="M16 16 L28 28 L4 28 Z" fill="#15803D"/>
+      <path d="M16 10 L26 21 L6 21 Z" fill="#16A34A"/>
+      <path d="M16 4 L24 14 L8 14 Z" fill="#22C55E"/>
     </svg>
   );
 }
@@ -47,32 +52,26 @@ function RestmuellIcon({ size = 28 }: { size?: number }) {
 // ── Mülltyp → Icon & Farbe ────────────────────────────────────────────────
 function WasteIcon({ type }: { type: string }) {
   const lower = type.toLowerCase();
-  if (lower.includes("gelb") || lower.includes("sack") || lower.includes("wertstoff")) {
-    return <GelberSackIcon />;
+  
+  if (lower.includes("schadstoff")) {
+    return <SchadstoffeIcon />;
   }
-  if (lower.includes("rest")) {
-    return <RestmuellIcon />;
+  if (lower.includes("baum") || lower.includes("weihnacht") || lower.includes("tanne")) {
+    return <TreeIcon />;
   }
-  if (lower.includes("papier") || lower.includes("blaue")) {
-    return (
-      <svg width="28" height="36" viewBox="0 0 32 36" fill="none">
-        <rect x="5" y="5" width="22" height="29" rx="3" fill="#3B82F6"/>
-        <rect x="9" y="10" width="14" height="2" rx="1" fill="#BFDBFE"/>
-        <rect x="9" y="15" width="14" height="2" rx="1" fill="#BFDBFE"/>
-        <rect x="9" y="20" width="10" height="2" rx="1" fill="#BFDBFE"/>
-        <rect x="12" y="2" width="8" height="4" rx="2" fill="#2563EB"/>
-      </svg>
-    );
+  if (lower.includes("gelb") || lower.includes("sack") || lower.includes("wertstoff") || lower.includes("verpackung")) {
+    return <BinIcon lidColor="#EAB308" handleColor="#CA8A04" bodyColor="#FCD34D" stripeColor="#F59E0B" />;
+  }
+  if (lower.includes("papier") || lower.includes("blau")) {
+    return <BinIcon lidColor="#3B82F6" handleColor="#2563EB" bodyColor="#60A5FA" stripeColor="#3B82F6" />;
   }
   if (lower.includes("bio") || lower.includes("braun")) {
-    return (
-      <svg width="28" height="36" viewBox="0 0 32 36" fill="none">
-        <path d="M6 10 L7 32 Q7 34 10 34 L22 34 Q25 34 25 32 L26 10Z" fill="#92400E"/>
-        <rect x="4" y="5" width="24" height="5" rx="2.5" fill="#78350F"/>
-        <rect x="12" y="2" width="8" height="4" rx="2" fill="#451A03"/>
-      </svg>
-    );
+    return <BinIcon lidColor="#92400E" handleColor="#78350F" bodyColor="#B45309" stripeColor="#92400E" />;
   }
+  if (lower.includes("rest") || lower.includes("grau")) {
+    return <BinIcon lidColor="#6B7280" handleColor="#4B5563" bodyColor="#9CA3AF" stripeColor="#6B7280" />;
+  }
+  
   // Fallback
   return <Trash2 className="w-6 h-6 opacity-50" />;
 }
@@ -129,11 +128,20 @@ export default function CalendarWidget() {
               <span className={clsx("font-bold text-sm", highlight ? "text-emerald-400" : "opacity-60")}>
                 {dateStr}
               </span>
-              <div className="flex items-center gap-2">
-                <span className={clsx("text-sm font-medium", highlight ? "text-white/90" : "opacity-50")}>
-                  {event.summary}
-                </span>
-                <WasteIcon type={event.summary} />
+              <div className="flex flex-col items-end flex-1 pl-4">
+                <div className="flex items-center gap-2 justify-end w-full">
+                  <span className={clsx("text-sm font-medium text-right", highlight ? "text-white/90" : "opacity-50")}>
+                    {event.summary}
+                  </span>
+                  <div className="flex-shrink-0">
+                    <WasteIcon type={event.summary} />
+                  </div>
+                </div>
+                {event.description && (
+                  <span className="text-[10px] text-white/50 text-right leading-tight mt-0.5 max-w-[180px]">
+                    {event.description}
+                  </span>
+                )}
               </div>
             </div>
           );

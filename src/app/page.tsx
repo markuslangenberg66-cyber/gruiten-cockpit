@@ -127,19 +127,19 @@ export default function Dashboard() {
         <div className="md:col-span-1 lg:col-span-2 space-y-4 sm:space-y-6">
           <TrafficWidget isMorning={isMorning} onWarning={setTrafficWarn} />
 
+          {/* Blitzer-Melder und Benzinpreise direkt unter Autofahrt */}
+          <BlitzerWidget isMorning={isMorning} />
+          <GasWidget />
+
           {/* S-Bahn + Wetter: auf Mobile untereinander, ab md nebeneinander */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             <TransportWidget isMorning={isMorning} onWarning={setTrainWarn} />
             <WeatherWidget isMorning={isMorning} />
           </div>
-          
-          {/* Blitzer-Melder direkt drunter für Verkehrsrelevanz */}
-          <BlitzerWidget isMorning={isMorning} />
         </div>
 
         {/* Sidebar – auf Mobile nach den Hauptwidgets */}
         <div className="space-y-4 sm:space-y-6">
-          <GasWidget />
           <CalendarWidget />
           <NewsWidget />
         </div>

@@ -1,60 +1,55 @@
 import { NextResponse } from "next/server";
-import fs from 'fs';
-import path from 'path';
 
 export const dynamic = 'force-dynamic';
 
 export async function GET() {
   try {
-    const filePath = path.join(process.cwd(), 'public', 'abfall.ics');
-    if (!fs.existsSync(filePath)) {
-       return NextResponse.json([]);
-    }
-    const icsContent = fs.readFileSync(filePath, 'utf-8');
+    // City ID 21804 (Haan), Area ID 40 (Bahnstraße)
+    const url = "https://mymuell.jumomind.com/mmapp/api.php?r=dates&city_id=21804&area_id=40";
     
-    // Very simple standalone parser
-    const events: any[] = [];
-    const lines = icsContent.split('\n');
-    let currentEvent: any = null;
-
-    for (const line of lines) {
-       const trimmed = line.trim();
-       if (trimmed === 'BEGIN:VEVENT') {
-           currentEvent = {};
-       } else if (trimmed === 'END:VEVENT') {
-           if (currentEvent) {
-               events.push(currentEvent);
-               currentEvent = null;
-           }
-       } else if (currentEvent) {
-           if (trimmed.startsWith('SUMMARY:')) {
-               currentEvent.summary = trimmed.substring(8);
-           } else if (trimmed.startsWith('DTSTART')) {
-               const val = trimmed.split(':')[1];
-               if (val) {
-                   // Parse 20260309T080000Z or similar
-                   const year = parseInt(val.substring(0,4));
-                   const month = parseInt(val.substring(4,6)) - 1;
-                   const day = parseInt(val.substring(6,8));
-                   currentEvent.start = new Date(year, month, day);
-               }
-           }
-       }
+    const response = await fetch(url, { next: { revalidate: 3600 } });
+    if (!response.ok) {
+      throw new Error(`Failed to fetch API: ${response.status}`);
     }
+    
+    const data = await response.json();
+    
+    const events = data.map((item: any) => {
+      // API returns something like "2026-03-09"
+      // We parse it into a real Date object string at 8 AM to avoid timezone offset issues
+      const dateParts = item.day.split('-');
+      const date = new Date(
+        parseInt(dateParts[0]), 
+        parseInt(dateParts[1]) - 1, 
+        parseInt(dateParts[2]), 
+        8, 0, 0
+      );
+      
+      return {
+        summary: item.title,
+        start: date.toISOString(),
+        description: item.description || "",
+      };
+    });
 
     const upcomingEvents = events
       .filter((event: any) => {
         if (!event.start) return false;
         const today = new Date();
         today.setHours(0, 0, 0, 0);
-        return new Date(event.start) >= today;
+        
+        const twoWeeksFromNow = new Date(today);
+        twoWeeksFromNow.setDate(today.getDate() + 14);
+        twoWeeksFromNow.setHours(23, 59, 59, 999);
+
+        const eventDate = new Date(event.start);
+        return eventDate >= today && eventDate <= twoWeeksFromNow;
       })
-      .sort((a, b) => new Date(a.start).getTime() - new Date(b.start).getTime())
-      .slice(0, 3);
+      .sort((a: any, b: any) => new Date(a.start).getTime() - new Date(b.start).getTime());
 
     return NextResponse.json(upcomingEvents);
   } catch (error: any) {
     console.error("Calendar parsing error:", error);
-    return NextResponse.json({ error: "Failed to parse local calendar" }, { status: 500 });
+    return NextResponse.json({ error: "Failed to fetch online calendar" }, { status: 500 });
   }
 }
